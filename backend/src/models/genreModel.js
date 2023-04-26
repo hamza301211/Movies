@@ -1,0 +1,11 @@
+const mongoose = require("mongoose");
+
+const genreSchema = mongoose.Schema({
+  // _id: mongoose.Schema.Types.ObjectId, 
+  genre: { type: String, required: true },
+  image: [{ public_id: { type: String, required: true }, url: { type: String, required: true } },],
+});
+const Genre = mongoose.model("Genre", genreSchema, "genres");
+
+module.exports = Genre;
+
